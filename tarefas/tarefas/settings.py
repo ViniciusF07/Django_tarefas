@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-3y5&yuw3)p=5%2uvl&_y&fuvch^id0tp6!&oe2$)ds)o2iiu*1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*config('ALLOWED_HOSTS').split(';'), 'djangotarefas-production.up.railway.app', 'https://web-tarefas-taupe.vercel.app/']
+ALLOWED_HOSTS = [*config('ALLOWED_HOSTS').split(';'), 'djangotarefas-production.up.railway.app',
+                 'http://127.0.0.1:5500', 'https://djtarefas-web.vercel.app']
 
 
 # Application definition
@@ -38,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #DRF
+    # DRF
     'rest_framework',
-    
-    #Tarefas api
+
+    # Tarefas api
     'api',
+    # https
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'tarefas.urls'
