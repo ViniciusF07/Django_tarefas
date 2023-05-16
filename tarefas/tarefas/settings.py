@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [*config('ALLOWED_HOSTS').split(';'), 'https://djangotarefas-production.up.railway.app/', 'https://phenomenal-faun-f493f9.netlify.app/']
 
-//
+
 # Application definition
 
 INSTALLED_APPS = [
